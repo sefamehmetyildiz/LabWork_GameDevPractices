@@ -7,7 +7,7 @@ public class HelloWorld : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("FrameTree",3f);
+        Invoke("FrameTree",1f);
     }
     void FrameTree()
     {
