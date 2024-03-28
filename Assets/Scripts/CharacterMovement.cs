@@ -15,12 +15,14 @@ public class CharacterMovement : MonoBehaviour
     public Vector3 jump;
     public float jumpForce = 3.0f;
     public bool isGrounded;
-    public float timer;
+    public float timer = 0;
+    public GameObject startScreen;
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 5.0f, 0.0f);
+       
     }
     
     void OnCollisionStay()        
@@ -29,12 +31,9 @@ public class CharacterMovement : MonoBehaviour
     }
    
     void Update () {
-
         
-        if (Time.deltaTime % 10 == 0)
-        { 
-            speed++; 
-        }
+        
+
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -44,6 +43,9 @@ public class CharacterMovement : MonoBehaviour
 
         if (animator.GetBool("isGameStart"))
         {
+            startScreen.SetActive(false);
+
+            timer += Time.deltaTime;
             transform.Translate(new Vector3(0,0,1)* Time.deltaTime * speed);
 
             // Switch the line 
