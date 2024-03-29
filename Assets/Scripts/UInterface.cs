@@ -10,14 +10,7 @@ public class UInterface : MonoBehaviour
     public GameObject myScoreCounter;
     public GameObject myTimer;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
